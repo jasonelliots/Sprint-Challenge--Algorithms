@@ -5,6 +5,19 @@ Your function must utilize recursion. It cannot contain any loops.
 '''
 def count_th(word):
     
-    # TBC
+    #need to count how many times 'th' occurs within word 
+    wordLength = len(word)
+
+    # base case 
+    if (wordLength == 0 or wordLength < 2): 
+        return 0
+  
+  
+    if (word[0 : 2] == 'th'): 
+        return count_th(word[1:]) + 1 
+  
+    # Otherwise, return the count  
+    # from the remaining index 
+    return count_th(word[1:])
+
     
-    pass
