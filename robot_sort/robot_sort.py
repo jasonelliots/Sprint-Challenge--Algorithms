@@ -101,10 +101,19 @@ class SortingRobot:
 
         # robot picks up item at current location and moves right 
         # robot compares held item to item at current location
-            # if the held item is greater (1 returned) => move right 
-            # if the held item is less (-1 returned) AND robot can move right => swap items, then move right. 
-            # Otherwise, move left and find the most recent location at which held item is greater than item at current location and swap. Then, return to beginning of the list and start over. 
-  
+        # if the held item is greater (1 returned) 
+            # if the robot can move right 
+                # move right 
+            # if the robot cannot move right
+                # swap items 
+                # return to beggining of the list 
+        # if the held item is less (-1 returned)
+            # if robot can move right
+                # swap items, then move right. 
+            # if robot cannot move right 
+                # move left and find the most recent item where held item is greater, then swap, return to beginning 
+        #decrement range by 1 after each item sorted
+
         # Traverse through all array elements 
         for i in range((len(self._list))-1): 
 
