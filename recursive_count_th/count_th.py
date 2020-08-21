@@ -20,4 +20,5 @@ def count_th(word):
     # from the remaining index 
     return count_th(word[1:])
 
-    
+
+print(count_th('abcthth'))

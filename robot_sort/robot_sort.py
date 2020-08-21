@@ -92,12 +92,31 @@ class SortingRobot:
         """
         return self._light == "ON"
 
+# Understand: The robot starts at the beginning of the list with no items. I need to use the predefined methods and create a sorting algorithm for the robot to traverse the list, compare the item(value) he is holding with the item at the position he is currrently at, and swap items(values) accordingly until the list is in order from lowest to highest. 
+
+
     def sort(self):
-        """
-        Sort the robot's list.
-        """
-        # Fill this out
-        pass
+
+        # need to make pickup and drop helper functions 
+
+        # robot picks up item at current location and moves right 
+        # robot compares held item to item at current location
+            # if the held item is greater (1 returned) => move right 
+            # if the held item is less (-1 returned) AND robot can move right => swap items, then move right. 
+            # Otherwise, move left and find the most recent location at which held item is greater than item at current location and swap. Then, return to beginning of the list and start over. 
+  
+        # Traverse through all array elements 
+        for i in range((len(self._list))-1): 
+
+            for x in range(0, len(self._list)-i-1): 
+
+            # traverse the array from 0 to n-i-1 
+            # Swap if the element found is greater 
+            # than the next element 
+                if self._list[x] > self._list[x+1]: 
+                    self._list[x], self._list[x+1] = self._list[x+1], self._list[x] 
+
+        return self._list
 
 
 if __name__ == "__main__":
